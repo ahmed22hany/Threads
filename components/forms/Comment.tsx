@@ -19,15 +19,14 @@ import { Button } from "../ui/button";
 
 import { CommentValidation } from "@/lib/validations/thread";
 import { addCommentToThread } from "@/lib/actions/thread.actions";
-// import { addCommentToThread } from "@/lib/actions/thread.actions";
 
 interface Props {
     threadId: string;
-    currentUserImage: string;
+    currentUserImg: string;
     currentUserId: string;
 }
 
-function Comment({ threadId, currentUserImage, currentUserId }: Props) {
+function Comment({ threadId, currentUserImg, currentUserId }: Props) {
     const pathname = usePathname();
 
     const form = useForm<z.infer<typeof CommentValidation>>({
@@ -58,7 +57,7 @@ function Comment({ threadId, currentUserImage, currentUserId }: Props) {
                         <FormItem className='flex w-full items-center gap-3'>
                             <FormLabel>
                                 <Image
-                                    src={currentUserImage}
+                                    src={currentUserImg}
                                     alt='current_user'
                                     width={48}
                                     height={48}
